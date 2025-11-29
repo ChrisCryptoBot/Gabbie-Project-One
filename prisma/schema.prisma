@@ -1,0 +1,142 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  image         String?
+  stripeId      String?   @unique
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  purchases     Purchase[]
+  subscriptions Subscription[]
+  videoProgress VideoProgress[]
+}
+
+model Purchase {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String   // Stripe product ID
+  priceId   String   // Stripe price ID
+  amount    Int      // Amount in cents
+  status    String   // completed, refunded, etc.
+  createdAt DateTime @default(now())
+
+  // For physical products
+  shippingAddress Json?
+  trackingNumber  String?
+
+  @@index([userId])
+}
+
+model Subscription {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stripeSubscriptionId String @unique
+  status             String   // active, canceled, past_due
+  currentPeriodEnd   DateTime
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String   @db.Text
+  thumbnail   String
+  price       Int      // Price in cents
+  stripeProductId String
+  stripePriceId   String
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  videos      Video[]
+}
+
+model Video {
+  id          String   @id @default(cuid())
+  courseId    String
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title       String
+  description String?  @db.Text
+  duration    Int      // Duration in seconds
+  order       Int
+  videoUrl    String   // Mux or Bunny.net URL
+  playbackId  String?  // Mux playback ID
+  isFree      Boolean  @default(false) // Preview videos
+  createdAt   DateTime @default(now())
+
+  progress    VideoProgress[]
+
+  @@index([courseId])
+}
+
+model VideoProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  videoId     String
+  video       Video    @relation(fields: [videoId], references: [id], onDelete: Cascade)
+  progress    Int      // Progress in seconds
+  completed   Boolean  @default(false)
+  updatedAt   DateTime @updatedAt
+
+  @@unique([userId, videoId])
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  featuredImage String?
+  category    String
+  tags        String[]
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([published])
+}
+
+model CommunityGroup {
+  id          String   @id @default(cuid())
+  name        String
+  description String   @db.Text
+  platform    String   // discord, groupme, whatsapp
+  inviteLink  String
+  category    String   // mcat, admissions, faith, admitted
+  memberCount Int?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([active])
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
