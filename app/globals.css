@@ -236,6 +236,10 @@ section[class*="via-blue-900"] h2.heading-2 {
   color: var(--color-text-primary);
 }
 
+.heading-4.text-neutral-900 {
+  color: #0f172a !important; /* neutral-900 */
+}
+
 .text-gradient {
   background: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
   -webkit-background-clip: text;
