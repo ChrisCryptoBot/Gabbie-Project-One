@@ -34,8 +34,8 @@ export default function ShopPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                   <p className="text-neutral-600 font-medium">Faith & Focus MCAT</p>
-                  <p className="text-sm text-neutral-500">Devotional Study Guide</p>
-                  <p className="text-xs text-neutral-400 mt-4">Add your product image here</p>
+                  <p className="text-sm text-neutral-600">Devotional Study Guide</p>
+                  <p className="text-xs text-neutral-500 mt-4">Add your product image here</p>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function ShopPage() {
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="aspect-square rounded-lg overflow-hidden bg-neutral-100 border-2 border-transparent hover:border-blue-500 cursor-pointer transition-all">
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-amber-50">
-                    <span className="text-xs text-neutral-400">Image {i}</span>
+                    <span className="text-xs text-neutral-500">Image {i}</span>
                   </div>
                 </div>
               ))}
@@ -115,7 +115,7 @@ export default function ShopPage() {
               <Button variant="primary" size="lg" className="w-full text-lg">
                 Add to Cart - $39.99
               </Button>
-              <p className="text-center text-sm text-neutral-500">
+              <p className="text-center text-sm text-neutral-600">
                 Free shipping on orders over $50
               </p>
             </div>
@@ -155,27 +155,27 @@ export default function ShopPage() {
               <ul className="grid md:grid-cols-2 gap-3">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
-                  <span>30 daily devotionals with Scripture</span>
+                  <span className="text-neutral-700">30 daily devotionals with Scripture</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
-                  <span>Study schedule templates</span>
+                  <span className="text-neutral-700">Study schedule templates</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
-                  <span>MCAT strategy guides</span>
+                  <span className="text-neutral-700">MCAT strategy guides</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
-                  <span>Prayer prompts and journaling space</span>
+                  <span className="text-neutral-700">Prayer prompts and journaling space</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
-                  <span>Memory techniques & mnemonics</span>
+                  <span className="text-neutral-700">Memory techniques & mnemonics</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
-                  <span>Stress management techniques</span>
+                  <span className="text-neutral-700">Stress management techniques</span>
                 </li>
               </ul>
             </ProductSection>
@@ -213,7 +213,7 @@ export default function ShopPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 {[1, 2].map((i) => (
                   <div key={i} className="aspect-[3/4] bg-neutral-100 rounded-lg flex items-center justify-center">
-                    <span className="text-neutral-400">Sample Page {i}</span>
+                    <span className="text-neutral-600">Sample Page {i}</span>
                   </div>
                 ))}
               </div>
@@ -223,7 +223,7 @@ export default function ShopPage() {
 
         {/* Testimonials */}
         <div className="mt-16">
-          <h2 className="heading-2 text-center mb-12">What Students Are Saying</h2>
+          <h2 className="heading-2 text-center mb-12 text-neutral-900">What Students Are Saying</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {

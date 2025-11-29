@@ -126,14 +126,14 @@ export default function AcademyPage() {
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
               Expert-Led Video Courses
             </div>
-            <h1 className="heading-display mb-6">
+            <h1 className="heading-display mb-6 text-white">
               Master Your Medical School Application
             </h1>
             <p className="text-xl opacity-90 mb-8">
               Step-by-step video courses to help you craft outstanding applications, ace interviews, and stand out to admissions committees.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" className="text-white border-white/30 hover:border-white/50">
                 Browse All Courses
               </Button>
               <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white/10">
@@ -159,7 +159,7 @@ export default function AcademyPage() {
               </div>
               <div className="flex flex-col justify-center text-white">
                 <span className="text-sm opacity-80 mb-2">FEATURED COURSE</span>
-                <h3 className="heading-3 mb-3">Personal Statement Mastery</h3>
+                <h3 className="heading-3 mb-3 text-white">Personal Statement Mastery</h3>
                 <p className="opacity-90 mb-4">Learn the exact framework used by successful applicants to write compelling personal statements</p>
                 <div className="flex items-center gap-4 text-sm opacity-80">
                   <span>12 lessons</span>

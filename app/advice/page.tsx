@@ -108,8 +108,10 @@ export default function AdvicePage() {
       {/* Hero */}
       <section className="pt-24 pb-12 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="heading-display mb-6">
-            Expert <span className="text-gradient">Advice</span> for Your Journey
+          <h1 className="heading-display mb-6 text-neutral-900">
+            <span className="text-neutral-800">Expert</span>{' '}
+            <span className="text-gradient">Advice</span>{' '}
+            <span className="text-neutral-800">for Your Journey</span>
           </h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Free resources, strategies, and guidance for MCAT preparation and medical school admissions

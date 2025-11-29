@@ -41,8 +41,9 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-24 pb-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="heading-display mb-6">
-            Get in <span className="text-gradient">Touch</span>
+          <h1 className="heading-display mb-6 text-neutral-900">
+            <span className="text-neutral-800">Get in</span>{' '}
+            <span className="text-gradient">Touch</span>
           </h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.

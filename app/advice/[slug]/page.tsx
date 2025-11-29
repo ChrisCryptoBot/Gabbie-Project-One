@@ -143,7 +143,7 @@ export default function ArticlePage() {
         </div>
 
         {/* Title */}
-        <h1 className="heading-1 mb-8">{article.title}</h1>
+        <h1 className="heading-1 mb-8 text-neutral-900">{article.title}</h1>
 
         {/* Featured Image Placeholder */}
         <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl mb-12 flex items-center justify-center">

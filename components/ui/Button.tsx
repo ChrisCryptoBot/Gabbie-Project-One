@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -24,18 +26,31 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        'bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-[0_4px_14px_rgba(37,99,235,0.25),0_8px_24px_rgba(37,99,235,0.15)] hover:scale-[1.02] active:scale-[0.98] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity',
+        'bg-gradient-to-br from-blue-600 to-blue-700 text-white hover:text-white shadow-[0_4px_14px_rgba(37,99,235,0.25),0_8px_24px_rgba(37,99,235,0.15)] hover:scale-[1.02] active:scale-[0.98] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity [&>*]:!text-white',
       secondary:
         'bg-white/10 backdrop-blur-sm border border-white/20 text-neutral-700 hover:bg-white/15 hover:border-blue-300 hover:text-blue-600 hover:scale-[1.02] active:scale-[0.98]',
       ghost: 'bg-transparent text-neutral-600 hover:bg-neutral-100 hover:text-blue-600',
       danger:
-        'bg-gradient-to-br from-red-600 to-red-700 text-white shadow-[0_4px_14px_rgba(239,68,68,0.25)] hover:scale-[1.02] active:scale-[0.98]',
+        'bg-gradient-to-br from-red-600 to-red-700 text-white hover:text-white shadow-[0_4px_14px_rgba(239,68,68,0.25)] hover:scale-[1.02] active:scale-[0.98]',
     };
 
     return (
       <button
         ref={ref}
         className={cn(baseStyles, sizeStyles[size], variantStyles[variant], className)}
+        style={variant === 'primary' ? { color: 'white' } : undefined}
+        onMouseEnter={(e) => {
+          if (variant === 'primary') {
+            e.currentTarget.style.setProperty('color', 'white', 'important');
+          }
+          props.onMouseEnter?.(e);
+        }}
+        onMouseLeave={(e) => {
+          if (variant === 'primary') {
+            e.currentTarget.style.setProperty('color', 'white', 'important');
+          }
+          props.onMouseLeave?.(e);
+        }}
         disabled={disabled || loading}
         {...props}
       >
@@ -46,6 +61,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               <div className="w-4 h-4 border-2 border-transparent border-t-current rounded-full animate-spin" />
             </div>
           </>
+        ) : variant === 'primary' ? (
+          <span style={{ color: 'white' }}>{children}</span>
         ) : (
           children
         )}

@@ -165,8 +165,10 @@ export default function CommunityPage() {
           <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
             Join 500+ Christian Pre-Med Students
           </div>
-          <h1 className="heading-display mb-6">
-            You're <span className="text-gradient">Not Alone</span> on This Journey
+          <h1 className="heading-display mb-6 text-neutral-900">
+            <span className="text-neutral-800">You're</span>{' '}
+            <span className="text-gradient">Not Alone</span>{' '}
+            <span className="text-neutral-800">on This Journey</span>
           </h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
             Connect with fellow Christian pre-med students for study support, prayer, accountability, and friendship throughout your MCAT prep and medical school journey.

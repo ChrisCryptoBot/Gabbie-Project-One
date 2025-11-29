@@ -14,8 +14,9 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="pt-24 pb-16 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="heading-display mb-6">
-            Our <span className="text-gradient">Mission</span>
+          <h1 className="heading-display mb-6 text-neutral-900">
+            <span className="text-neutral-800">Our</span>{' '}
+            <span className="text-gradient">Mission</span>
           </h1>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Empowering Christian pre-med students to pursue medicine with excellence, purpose, and unwavering faith
@@ -24,7 +25,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-gradient-to-br from-neutral-900 via-blue-900 to-purple-900">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             {/* Photo Placeholder */}
@@ -37,8 +38,8 @@ export default function AboutPage() {
 
             {/* Story */}
             <div>
-              <h2 className="heading-2 mb-6">The Story Behind Faith & Focus</h2>
-              <div className="space-y-4 text-neutral-700">
+              <h2 className="heading-2 mb-6 text-white">The Story Behind Faith & Focus</h2>
+              <div className="space-y-4 text-neutral-200">
                 <p>
                   As a Christian pre-med student preparing for the MCAT, I experienced firsthand the challenge of maintaining spiritual disciplines while dedicating countless hours to studying. Too often, I felt I had to choose between my faith and my academic goals.
                 </p>

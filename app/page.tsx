@@ -33,8 +33,10 @@ export default function Home() {
             Faith-Integrated MCAT Preparation
           </div>
 
-          <h1 className="heading-display mb-6">
-            Prepare for the <span className="text-gradient">MCAT</span> with{' '}
+          <h1 className="heading-display mb-6 text-neutral-900">
+            <span className="text-neutral-800">Prepare for the</span>{' '}
+            <span className="text-gradient">MCAT</span>{' '}
+            <span className="text-neutral-800">with</span>{' '}
             <span className="text-gradient">Faith & Focus</span>
           </h1>
 
@@ -45,7 +47,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link href="/shop">
-              <Button variant="primary" size="lg">Get the Study Guide</Button>
+              <Button variant="primary" size="lg" className="!text-white" style={{ color: 'white' }}>Get the Study Guide</Button>
             </Link>
             <Link href="/academy">
               <Button variant="secondary" size="lg">Explore Academy</Button>
@@ -238,7 +240,7 @@ export default function Home() {
       <section className="py-24 px-6 bg-gradient-to-br from-blue-50 to-amber-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-4">Student Success Stories</h2>
+            <h2 className="heading-2 mb-4 text-neutral-900">Student Success Stories</h2>
             <p className="text-lg text-neutral-600">Hear from students who combined faith and focus</p>
           </div>
 
@@ -283,7 +285,7 @@ export default function Home() {
               <Button variant="secondary" size="lg">Get the Study Guide</Button>
             </Link>
             <Link href="/academy">
-              <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white/10">Browse Courses</Button>
+              <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white/10 hover:text-white">Browse Courses</Button>
             </Link>
           </div>
         </div>
